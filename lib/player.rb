@@ -11,15 +11,15 @@ class Player
         puts "#{@name} have #{@life_points} life points"
     end
 
-    def gets_damage(x)
-        @life_points -= x
+    def gets_damage(damage_recieve)
+        @life_points -= damage_recieve
         if @life_points >= 0 ? show_state : (@life_points = 0 ; puts "le joueur #{name} a été tué !")
         end
     end
 
     def attacks(player)
-        damage = compute_damage
-        player.gets_damage(damage)
+        damage_deal = compute_damage
+        player.gets_damage(damage_deal)
     end
     
     def compute_damage
