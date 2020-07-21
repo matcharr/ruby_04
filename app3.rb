@@ -18,13 +18,10 @@ while my_game.is_still_ongoing?
   puts "\n----------Your Turn------------------"
   print '> '
   my_game.menu_choice(gets.chomp)
-  #sleep 2
   puts "\n----------Enemies Turn---------------"
   my_game.enemies_attack
-  #sleep 2
   puts "\n----------Players Stats--------------"
   my_game.show_players
-  #sleep 2
 end
 my_game.end
 binding.pry
