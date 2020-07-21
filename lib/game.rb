@@ -32,7 +32,7 @@ class Game
   end
 
   def menu_choice(string)
-    if  "asf".include?
+    if  "asf".include? string
       case string
       when 'a' then @human_player.search_weapon
       when 's' then @human_player.search_health_pack
