@@ -30,11 +30,12 @@ class HumanPlayer < Player
   attr_accessor :weapon_level
   def initialize(name)
     @weapon_level = 1
+    super(name)
     @life_points = 100
   end
 
   def show_state
-    print "#{@name} have #{@life_points} life points and a weapon level #{@weapon_level}\n"
+    print " #{@name} have #{@life_points} life points and a weapon level #{@weapon_level}\n"
   end
 
   def compute_damage
@@ -44,7 +45,7 @@ class HumanPlayer < Player
   def search_weapon
     level = rand(1..6)
     puts "U have found a weapon level #{level}"
-    puts level > @weapon_level ? "Youhou !  It's a Great weapon level #{@weapon_level = level}, u take it " : "M@*" + "#"+ "{" + "$.}" + ".. Worst than current weapon drop it!"
+    puts level > @weapon_level ? "Youhou !  It's a Great weapon level #{@weapon_level = level}, you take it!" : "M@*" + "#"+ "{" + "$.}" + ".. Worst than current weapon drop it!"
   end
 
   def search_health_pack

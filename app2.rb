@@ -7,21 +7,21 @@ require_relative 'lib/game'
 require_relative 'lib/player'
 
 def menu
-  puts "Select Action!\n"
+  puts "\nSelect Action!\n\n"
   puts 'a - Search Weapon'
   puts "s - Search Health Pack\n"
-  puts 'Attacking first enemi in sight!!!'
-  puts '0 - Alice have 10 life points'
-  puts '1 - John have 10 life points'
+  puts "\nAttacking first enemies in sight!!!\n\n"
+  puts "0 - Attack Alice have #{@life_points} life points"
+  puts "1 - Attack John have #{@life_points} life points"
   puts 'quit - quit game'
 end
 
 puts " -----------------------------------------------\n|Bienvenue sur 'ILS VEULENT TOUS MA POO' !      |\n|Le but du jeu est d'être le dernier survivant !|\n -----------------------------------------------\n"
-puts "\nInitialize player :"
+puts "\n----------Initialize player----------\n\n"
 print ' > Enter player name : '
 human = HumanPlayer.new(gets.chomp)
 human.show_state
-puts "\nInitialize enemies:"
+puts "\n----------Initialize enemies----------\n\n"
 enemies = [john = Player.new('John'), alice = Player.new('Alice')]
 john.show_state
 alice.show_state
@@ -35,8 +35,8 @@ while human.life_points > 0 && (john.life_points > 0 || alice.life_points > 0)
   case gets.chomp
   when 'a' then human.search_weapon
   when 's' then human.search_health_pack
-  when '0' then human.attacks(john)
-  when '1' then human.attacks(alice)
+  when '0' then human.attacks(alice)
+  when '1' then human.attacks(john)
   when 'quit' then break
   end
  # sleep 2
@@ -49,6 +49,7 @@ while human.life_points > 0 && (john.life_points > 0 || alice.life_points > 0)
   alice.show_state
  #sleep 2
 end
-puts "\nEnd of the Game!!!"
+
+puts "\n----------End of the Game!!!----------"
 puts human.life_points > 0 ? 'Well Done! You WIN this time.' : 'You LOOSE, better luck next time!'
 binding.pry
