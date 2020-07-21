@@ -7,8 +7,8 @@ require_relative 'lib/game'
 require_relative 'lib/player'
 
 
-john = Player.new("john")
-alice = Player.new("alice")
+john = Player.new("John")
+alice = Player.new("Alice")
 
 while !((alice.life_points || john.life_points) <= 0) 
     puts "\n-------------\nVoici l'état de chaque joueur : "
